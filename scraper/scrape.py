@@ -87,11 +87,60 @@ def parse_list(page_html):
     return events
 
 
-def parse_prices(detail_html):
-    """Lines right after the '料金' heading that carry a currency."""
+def detail_lines(detail_html):
     body = re.sub(r"<script.*?</script>|<style.*?</style>", "", detail_html, flags=re.S)
-    lines = [l.strip() for l in text(re.sub(r"</(p|li|div|h\d|dd|dt|tr)>", "\n", body)).split("\n")]
-    lines = [re.sub(r"\s+", " ", l) for l in lines if l.strip()]
+    lines = [l.strip() for l in text(re.sub(r"</(p|li|div|h\d|dd|dt|tr|th|td)>", "\n", body)).split("\n")]
+    return [re.sub(r"\s+", " ", l) for l in lines if l.strip()]
+
+
+DT_TOKEN = re.compile(r"(?:(\d{4})年)?\s*(\d{1,2})月\s*(\d{1,2})日(?:\s*\([^)]*\))?\s*(?:(\d{1,2}):(\d{2}))?")
+
+
+def parse_period(s, year_hint):
+    """'2026年11月15日(日) 20:00 ～ 12月20日(日) 23:59まで' -> (start_iso, end_iso) in JST, None if missing."""
+    parts = re.split(r"[～~〜]", s, maxsplit=1)
+    out, y = [], year_hint
+    for i, p in enumerate(parts):
+        g = DT_TOKEN.search(p)
+        if not g:
+            out.append(None)
+            continue
+        if g.group(1):
+            y = int(g.group(1))
+        mo, d = int(g.group(2)), int(g.group(3))
+        hh, mm = (int(g.group(4)), int(g.group(5))) if g.group(4) else ((0, 0) if i == 0 else (23, 59))
+        try:
+            v = dt.datetime(y, mo, d, min(hh, 23), mm, tzinfo=JST)
+            if out and out[0] and v < dt.datetime.fromisoformat(out[0]):
+                v = v.replace(year=y + 1)            # period crosses new year without a year
+            out.append(v.isoformat())
+        except ValueError:
+            out.append(None)
+    while len(out) < 2:
+        out.append(None)
+    return out[0], out[1]
+
+
+def parse_sales(lines, year_hint):
+    """Ticket phases: a phase-name line followed by '受付期間：…' (or '発売日：…' for general sale)."""
+    sales = []
+    for i, l in enumerate(lines):
+        m = re.match(r"^(受付期間|抽選受付期間|販売期間|発売日|発売期間)\s*[：:]\s*(.+)$", l)
+        if not m:
+            continue
+        name = lines[i - 1] if i > 0 else ""
+        if re.match(r"^(受付期間|抽選受付期間|販売期間|発売日|発売期間|受付はこちら)", name) or len(name) > 60:
+            name = "チケット"
+        closed = "受付終了" in name
+        name = re.sub(r"\s*※?\s*受付終了\s*", "", name)
+        name = re.sub(r"[（(]\s*[）)]", "", name).strip() or "チケット"
+        start, end = parse_period(m.group(2), year_hint)
+        sales.append({"name": name, "period": m.group(2).strip(), "start": start, "end": end, "closed": closed})
+    return sales[:10]
+
+
+def parse_prices(lines):
+    """Lines right after the '料金' heading that carry a currency."""
     cur = re.compile(r"[0-9][0-9,]*\s*円|HK\$|₩|KRW|NT\$|US\$|\$\s?\d|원")
     prices = []
     for i, l in enumerate(lines):
@@ -170,17 +219,21 @@ def main():
         print("no upcoming events parsed; keeping previous data.json", file=sys.stderr)
         return 1
 
-    weekly = today.weekday() == 0   # refresh known prices on Mondays
+    # detail pages: new events and events without prices every day, the rest every 3rd day
+    # (ticket phases get added over time)
+    refresh_all = today.toordinal() % 3 == 0
     for ev in collected:
         prev = old.get(ev["url"], {})
-        if prev.get("prices") and not weekly:
-            ev["prices"] = prev["prices"]
+        if prev and prev.get("prices") and "sales" in prev and not refresh_all:
+            ev["prices"], ev["sales"] = prev["prices"], prev["sales"]
             continue
         try:
-            ev["prices"] = parse_prices(fetch(ev["url"]))
+            lines = detail_lines(fetch(ev["url"]))
+            ev["prices"] = parse_prices(lines)
+            ev["sales"] = parse_sales(lines, today.year)
         except Exception as e:
             print(f"detail fetch failed {ev['url']}: {e}", file=sys.stderr)
-            ev["prices"] = prev.get("prices", [])
+            ev["prices"], ev["sales"] = prev.get("prices", []), prev.get("sales", [])
 
     collected.sort(key=lambda e: e["stops"][0]["date"])
     data = {"source": BASE, "events": collected}

@@ -88,3 +88,15 @@ h1 { font-family: var(--f-display); font-weight: 800; font-size: clamp(1.7rem, 4
 footer { margin-top: 40px; font-size: 0.8rem; color: var(--muted); display: grid; gap: 4px; }
 footer a { color: var(--accent); }
 @media (max-width: 480px) { .ev { grid-template-columns: 60px 1fr; } .ev .day { font-size: 1.35rem; } .stops li { grid-template-columns: 6.4em 1fr; } }
+.toggles { display: inline-flex; gap: 14px; flex-wrap: wrap; }
+.sales { margin: 4px 0 0; padding: 0; list-style: none; display: grid; gap: 4px; font-size: 0.82rem; }
+.sales li { display: grid; grid-template-columns: auto auto 1fr; gap: 4px 8px; align-items: baseline; }
+.sales .st { font-size: 0.7rem; font-weight: 700; border-radius: 6px; padding: 1px 7px; white-space: nowrap; }
+.sales .open .st { background: var(--accent); color: var(--accent-ink); }
+.sales .soon .st { border: 1px solid var(--accent); color: var(--accent); }
+.sales .done .st { background: var(--line); color: var(--muted); }
+.sales .nm { font-family: var(--f-jp); font-weight: 700; }
+.sales .pd { color: var(--muted); font-variant-numeric: tabular-nums; min-width: 0; }
+.sales .pd b { color: var(--accent); }
+.sales .done .nm, .sales .done .pd { color: var(--past); font-weight: 500; }
+@media (max-width: 480px) { .sales li { grid-template-columns: auto 1fr; } .sales .pd { grid-column: 1 / -1; } }

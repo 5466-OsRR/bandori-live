@@ -14,7 +14,7 @@ const md = d => `${d.getMonth() + 1}/${d.getDate()} (${WD[d.getDay()]})`;
 const color = b => BANDS[b] || OTHER;
 
 let EVENTS = [];
-let active = null, activeKind = null, showPast = false;
+let active = null, activeKind = null, showPast = false, onlyOpen = false;
 try { active = localStorage.getItem("bandori-filter") || null; activeKind = localStorage.getItem("bandori-kind") || null; } catch (e) {}
 const save = (k, v) => { try { v ? localStorage.setItem(k, v) : localStorage.removeItem(k); } catch (e) {} };
 
@@ -26,7 +26,8 @@ const firstUpcoming = e => {
   }
   return null;
 };
-const match = e => (!active || e.bands.includes(active)) && (!activeKind || e.kind === activeKind);
+const match = e => (!active || e.bands.includes(active)) && (!activeKind || e.kind === activeKind)
+  && (!onlyOpen || openSales(e).length > 0);
 const visible = e => showPast || lastDate(e) >= today;
 
 // "TOYOTA ARENA TOKYO（韓国）" -> query without trailing country note
@@ -42,6 +43,35 @@ function priceHtml(e) {
   const summary = nums.length ? (lo === hi ? `${lo.toLocaleString()}円` : `${lo.toLocaleString()}円 ~ ${hi.toLocaleString()}円`) : esc(p[0][1]);
   return `<details class="price"><summary>표 가격 <b>${summary}</b></summary>
     <ul>${p.map(x => `<li><span>${esc(x[0]) || "가격"}</span><span>${esc(x[1])}</span></li>`).join("")}</ul></details>`;
+}
+
+// ticket phases: status from the viewer's clock (times are JST = KST)
+const NOW = Date.now();
+function saleState(s) {
+  const st = s.start ? Date.parse(s.start) : null, en = s.end ? Date.parse(s.end) : null;
+  if (s.closed || (en && en < NOW)) return "done";
+  if (st && st > NOW) return "soon";
+  return "open";
+}
+const openSales = e => (e.sales || []).filter(s => saleState(s) === "open");
+function leftText(s) {
+  if (!s.end) return "";
+  const h = (Date.parse(s.end) - NOW) / 3600000;
+  if (h < 24) return `오늘 마감 (${Math.max(1, Math.ceil(h))}시간 남음)`;
+  return `마감 D-${Math.ceil(h / 24 - 0.0001)}`;
+}
+function salesHtml(e) {
+  const list = e.sales || [];
+  if (!list.length) return "";
+  const order = { open: 0, soon: 1, done: 2 };
+  const rows = [...list].sort((a, b) => order[saleState(a)] - order[saleState(b)]);
+  const label = { open: "접수 중", soon: "예정", done: "종료" };
+  return `<ul class="sales">${rows.map(s => {
+    const k = saleState(s);
+    const lb = k === "open" && !s.end ? "판매 중" : label[k];
+    return `<li class="${k}"><span class="st">${lb}</span><span class="nm">${esc(s.name)}</span>
+      <span class="pd">${esc(s.period)}${k === "open" && s.end ? ` · <b>${leftText(s)}</b>` : ""}</span></li>`;
+  }).join("")}</ul>`;
 }
 
 function chip(label, pressed, onClick, c) {
@@ -95,6 +125,7 @@ function card(e) {
       ${stops}
       ${e.venue_note ? `<div class="meta">${e.venues.map(venueHtml).join("")}</div><div class="note">날짜와 장소 수가 달라 날짜별 장소는 공식 페이지에서 확인</div>` : ""}
       ${e.summary ? `<div class="note">${esc(e.summary)}</div>` : ""}
+      ${salesHtml(e)}
       ${priceHtml(e)}
     </div>`;
   return el;
@@ -116,7 +147,8 @@ function render() {
     nx.hidden = false;
   } else nx.hidden = true;
 
-  document.getElementById("count").textContent = `${list.length}개 공연 · 총 ${list.reduce((n, x) => n + x.e.stops.length, 0)}회`;
+  const nOpen = EVENTS.filter(e => visible(e) && openSales(e).length).length;
+  document.getElementById("count").textContent = `${list.length}개 공연 · 총 ${list.reduce((n, x) => n + x.e.stops.length, 0)}회 · 티켓 접수 중 ${nOpen}개`;
   const tl = document.getElementById("timeline");
   tl.innerHTML = "";
   if (!list.length) { tl.innerHTML = '<p class="empty">이 조건에 맞는 예정된 공연이 없습니다. 다른 종류나 밴드를 골라 보세요.</p>'; return; }
@@ -136,6 +168,7 @@ function render() {
 }
 
 document.getElementById("show-past").addEventListener("change", ev => { showPast = ev.target.checked; render(); });
+document.getElementById("only-open").addEventListener("change", ev => { onlyOpen = ev.target.checked; render(); });
 
 fetch("data.json", { cache: "no-cache" })
   .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })

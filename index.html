@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>뱅드림 라이브 일정</title>
 <meta name="description" content="BanG Dream! 공식 사이트 이벤트 목록을 매일 자동으로 모아 보여 주는 팬 일정표">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="googlebot" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;800&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Sans+JP:wght@500;700&display=swap">
 <link rel="stylesheet" href="style.css">
@@ -26,7 +29,10 @@
   <div class="filters" id="filters" role="group" aria-label="밴드별 보기"></div>
   <div class="opts">
     <span id="count"></span>
-    <label class="toggle"><input type="checkbox" id="show-past"> 지난 공연도 보기</label>
+    <span class="toggles">
+      <label class="toggle"><input type="checkbox" id="only-open"> 티켓 접수 중인 공연만</label>
+      <label class="toggle"><input type="checkbox" id="show-past"> 지난 공연도 보기</label>
+    </span>
   </div>
 
   <main id="timeline"><p class="empty">일정을 불러오는 중입니다.</p></main>
@@ -34,6 +40,7 @@
   <footer>
     <span>출처: <a href="https://bang-dream.com/events/" target="_blank" rel="noopener">bang-dream.com/events</a> · 매일 자동으로 모은 팬 페이지이며 공식 사이트가 아닙니다. 티켓 전에 공식 페이지를 확인하세요.</span>
     <span>투어의 날짜·장소 짝은 공식 목록에 나열된 순서로 맞춘 것입니다. 표 가격은 각 공연 공식 페이지의 '料金' 항목을 그대로 옮겼습니다.</span>
+    <span>티켓 접수 기간은 공식 페이지 표기(일본 시간) 그대로이며, 한국 시간도 같습니다. 접수 상태는 이 기기의 현재 시각으로 계산합니다.</span>
   </footer>
 </div>
 <script src="app.js"></script>
