@@ -10,7 +10,7 @@
 <meta name="referrer" content="no-referrer">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;800&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Sans+JP:wght@500;700&display=swap">
-<link rel="stylesheet" href="style.css?v=3">
+<link rel="stylesheet" href="style.css?v=4">
 </head>
 <body>
 <div class="wrap">
@@ -27,6 +27,13 @@
 
   <div class="filters" id="kinds" role="group" aria-label="공연 종류별 보기"></div>
   <div class="filters" id="filters" role="group" aria-label="밴드별 보기"></div>
+  <div class="period">
+    <label for="f-year">연도</label>
+    <select id="f-year"></select>
+    <label for="f-month">월</label>
+    <select id="f-month"></select>
+    <button type="button" class="chip kind" id="f-reset" hidden>기간 초기화</button>
+  </div>
   <div class="opts">
     <span id="count"></span>
     <span class="toggles">
@@ -43,6 +50,6 @@
     <span>티켓 접수 기간은 공식 페이지 표기(일본 시간) 그대로이며, 한국 시간도 같습니다. 접수 상태는 이 기기의 현재 시각으로 계산합니다.</span>
   </footer>
 </div>
-<script src="app.js?v=3"></script>
+<script src="app.js?v=4"></script>
 </body>
 </html>

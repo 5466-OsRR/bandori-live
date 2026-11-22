@@ -26,8 +26,39 @@ const firstUpcoming = e => {
   }
   return null;
 };
+// every "YYYY-M" a show touches (multi-date tours and date ranges count in each month)
+let fYear = null, fMonth = null;
+const monthsOf = e => {
+  if (e._months) return e._months;
+  const set = new Set();
+  for (const s of e.stops) {
+    const a = parse(s.date), b = s.end ? parse(s.end) : a;
+    for (let d = new Date(a.getFullYear(), a.getMonth(), 1); d <= b; d.setMonth(d.getMonth() + 1)) set.add(`${d.getFullYear()}-${d.getMonth() + 1}`);
+  }
+  return (e._months = set);
+};
+const inPeriod = e => {
+  if (!fYear && !fMonth) return true;
+  for (const k of monthsOf(e)) {
+    const [y, m] = k.split("-").map(Number);
+    if ((!fYear || y === fYear) && (!fMonth || m === fMonth)) return true;
+  }
+  return false;
+};
 const match = e => (!active || e.bands.includes(active)) && (!activeKind || e.kind === activeKind)
-  && (!onlyOpen || openSales(e).length > 0);
+  && (!onlyOpen || openSales(e).length > 0) && inPeriod(e);
+
+function renderPeriod() {
+  const ys = document.getElementById("f-year"), ms = document.getElementById("f-month");
+  const keys = [...new Set(EVENTS.filter(visible).flatMap(e => [...monthsOf(e)]))]
+    .map(k => k.split("-").map(Number)).sort((a, b) => a[0] - b[0] || a[1] - b[1]);
+  const years = [...new Set(keys.map(k => k[0]))];
+  const months = [...new Set(keys.filter(k => !fYear || k[0] === fYear).map(k => k[1]))].sort((a, b) => a - b);
+  if (fMonth && !months.includes(fMonth)) months.push(fMonth), months.sort((a, b) => a - b);
+  ys.innerHTML = `<option value="">전체</option>` + years.map(y => `<option value="${y}"${y === fYear ? " selected" : ""}>${y}년</option>`).join("");
+  ms.innerHTML = `<option value="">전체</option>` + months.map(m => `<option value="${m}"${m === fMonth ? " selected" : ""}>${m}월</option>`).join("");
+  document.getElementById("f-reset").hidden = !fYear && !fMonth;
+}
 const visible = e => showPast || lastDate(e) >= today;
 
 // "TOYOTA ARENA TOKYO（韓国）" -> query without trailing country note
@@ -133,8 +164,15 @@ function card(e) {
 
 function render() {
   renderFilters();
+  renderPeriod();
+  const periodKey = e => {
+    if (!fYear && !fMonth) return null;
+    const hit = e.stops.map(s => parse(s.date)).find(d => (!fYear || d.getFullYear() === fYear) && (!fMonth || d.getMonth() + 1 === fMonth)
+      && (showPast || d >= today));
+    return hit || null;
+  };
   const list = EVENTS.filter(match).filter(visible)
-    .map(e => ({ e, key: firstUpcoming(e) || parse(e.stops[0].date) }))
+    .map(e => ({ e, key: periodKey(e) || firstUpcoming(e) || parse(e.stops[0].date) }))
     .sort((a, b) => a.key - b.key);
 
   const up = EVENTS.filter(match).map(e => ({ e, d: firstUpcoming(e) })).filter(x => x.d).sort((a, b) => a.d - b.d)[0];
@@ -169,6 +207,9 @@ function render() {
 
 document.getElementById("show-past").addEventListener("change", ev => { showPast = ev.target.checked; render(); });
 document.getElementById("only-open").addEventListener("change", ev => { onlyOpen = ev.target.checked; render(); });
+document.getElementById("f-year").addEventListener("change", ev => { fYear = ev.target.value ? Number(ev.target.value) : null; render(); });
+document.getElementById("f-month").addEventListener("change", ev => { fMonth = ev.target.value ? Number(ev.target.value) : null; render(); });
+document.getElementById("f-reset").addEventListener("click", () => { fYear = null; fMonth = null; render(); });
 
 fetch("data.json?t=" + Date.now(), { cache: "no-store" })
   .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
