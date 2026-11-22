@@ -170,7 +170,7 @@ function render() {
 document.getElementById("show-past").addEventListener("change", ev => { showPast = ev.target.checked; render(); });
 document.getElementById("only-open").addEventListener("change", ev => { onlyOpen = ev.target.checked; render(); });
 
-fetch("data.json", { cache: "no-cache" })
+fetch("data.json?t=" + Date.now(), { cache: "no-store" })
   .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
   .then(d => {
     EVENTS = d.events || [];
