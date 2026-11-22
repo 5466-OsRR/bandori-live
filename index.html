@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>뱅드림 라이브 일정</title>
+<meta name="description" content="BanG Dream! 공식 사이트 이벤트 목록을 매일 자동으로 모아 보여 주는 팬 일정표">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;800&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Sans+JP:wght@500;700&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>뱅드림 라이브 일정</h1>
+    <p class="sub" id="sub">BanG Dream! 공식 사이트 이벤트 목록 기준 · 불러오는 중…</p>
+  </header>
+
+  <section class="next" id="next" hidden>
+    <div class="dd" id="next-dd"></div>
+    <div class="lbl" id="next-lbl">다음 공연</div>
+    <div class="t" id="next-t"></div>
+  </section>
+
+  <div class="filters" id="kinds" role="group" aria-label="공연 종류별 보기"></div>
+  <div class="filters" id="filters" role="group" aria-label="밴드별 보기"></div>
+  <div class="opts">
+    <span id="count"></span>
+    <label class="toggle"><input type="checkbox" id="show-past"> 지난 공연도 보기</label>
+  </div>
+
+  <main id="timeline"><p class="empty">일정을 불러오는 중입니다.</p></main>
+
+  <footer>
+    <span>출처: <a href="https://bang-dream.com/events/" target="_blank" rel="noopener">bang-dream.com/events</a> · 매일 자동으로 모은 팬 페이지이며 공식 사이트가 아닙니다. 티켓 전에 공식 페이지를 확인하세요.</span>
+    <span>투어의 날짜·장소 짝은 공식 목록에 나열된 순서로 맞춘 것입니다. 표 가격은 각 공연 공식 페이지의 '料金' 항목을 그대로 옮겼습니다.</span>
+  </footer>
+</div>
+<script src="app.js"></script>
+</body>
+</html>

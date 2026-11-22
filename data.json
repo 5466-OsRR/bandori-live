@@ -1,0 +1,732 @@
+{
+ "source": "https://bang-dream.com/events/",
+ "events": [
+  {
+   "url": "https://bang-dream.com/events/evanescence_avemujica/",
+   "title": "EVANESCENCE 2026 JAPAN",
+   "category": "ライブ",
+   "date_text": "2026年12月1日(火)・2日(水)・4日(金)",
+   "venue_text": "SGC HALL ARIAKE、Zepp Osaka Bayside",
+   "summary": "12月1日(火)・2日(水)東京公演、4日(金)大阪公演 Ave Mujica出演",
+   "bands": [
+    "Ave Mujica"
+   ],
+   "kind": "출연",
+   "stops": [
+    {
+     "date": "2026-12-01",
+     "venue": ""
+    },
+    {
+     "date": "2026-12-02",
+     "venue": ""
+    },
+    {
+     "date": "2026-12-04",
+     "venue": ""
+    }
+   ],
+   "venues": [
+    "SGC HALL ARIAKE",
+    "Zepp Osaka Bayside"
+   ],
+   "venue_note": "SGC HALL ARIAKE、Zepp Osaka Bayside",
+   "prices": []
+  },
+  {
+   "url": "https://bang-dream.com/events/yumemita_yunos_party_lv3/",
+   "title": "千石ユノ主催DJイベント「YUNO’s PARTY Lv.3」",
+   "category": "イベント",
+   "date_text": "2026年12月5日(土)",
+   "venue_text": "duo MUSIC EXCHANGE",
+   "summary": "",
+   "bands": [
+    "夢限大みゅーたいぷ"
+   ],
+   "kind": "이벤트",
+   "stops": [
+    {
+     "date": "2026-12-05",
+     "venue": "duo MUSIC EXCHANGE"
+    }
+   ],
+   "venues": [
+    "duo MUSIC EXCHANGE"
+   ],
+   "venue_note": "",
+   "prices": [
+    [
+     "特典付き1Fスタンディング",
+     "9,900円(税込）"
+    ],
+    [
+     "1Fスタンディング",
+     "6,600円(税込)"
+    ],
+    [
+     "特典付き2Fスタンディング",
+     "9,900円(税込）"
+    ],
+    [
+     "2Fスタンディング",
+     "6,600円(税込)"
+    ],
+    [
+     "特典付き2Fスタンディング 女性限定エリア",
+     "9,900円(税込）"
+    ],
+    [
+     "2Fスタンディング 女性限定エリア",
+     "6,600円(税込)"
+    ]
+   ]
+  },
+  {
+   "url": "https://bang-dream.com/events/ikka-dumb-rock_1st/",
+   "title": "一家Dumb Rock! 1st GIG「ピース＆グルーヴ」",
+   "category": "ライブ",
+   "date_text": "2026年12月12日(土)",
+   "venue_text": "duo MUSIC EXCHANGE",
+   "summary": "",
+   "bands": [
+    "一家Dumb Rock!"
+   ],
+   "kind": "단독",
+   "stops": [
+    {
+     "date": "2026-12-12",
+     "venue": "duo MUSIC EXCHANGE"
+    }
+   ],
+   "venues": [
+    "duo MUSIC EXCHANGE"
+   ],
+   "venue_note": "",
+   "prices": [
+    [
+     "1Fスタンディング",
+     "6,600円(税込)"
+    ]
+   ]
+  },
+  {
+   "url": "https://bang-dream.com/events/nakamachiarale_live2026/",
+   "title": "NAKAMACHI ARALE LIVE 2026「RESONEXT」",
+   "category": "ライブ",
+   "date_text": "2026年12月24日(木)",
+   "venue_text": "大手町三井ホール",
+   "summary": "",
+   "bands": [
+    "夢限大みゅーたいぷ"
+   ],
+   "kind": "단독",
+   "stops": [
+    {
+     "date": "2026-12-24",
+     "venue": "大手町三井ホール"
+    }
+   ],
+   "venues": [
+    "大手町三井ホール"
+   ],
+   "venue_note": "",
+   "prices": [
+    [
+     "特典付き指定席",
+     "9,900円(税込）"
+    ],
+    [
+     "一般指定席",
+     "6,600円(税込)"
+    ]
+   ]
+  },
+  {
+   "url": "https://bang-dream.com/events/millsage_1st/",
+   "title": "millsage LIVE 001「極夜」",
+   "category": "ライブ",
+   "date_text": "2026年12月25日(金)",
+   "venue_text": "Spotify O-WEST",
+   "summary": "",
+   "bands": [
+    "millsage"
+   ],
+   "kind": "단독",
+   "stops": [
+    {
+     "date": "2026-12-25",
+     "venue": "Spotify O-WEST"
+    }
+   ],
+   "venues": [
+    "Spotify O-WEST"
+   ],
+   "venue_note": "",
+   "prices": [
+    [
+     "1Fスタンディング",
+     "6,600円(税込)"
+    ]
+   ]
+  },
+  {
+   "url": "https://bang-dream.com/events/mygo_9th_hongkong/",
+   "title": "MyGO!!!!! 9th LIVE「つなぎ目の向こうに」- 香港還想編 -",
+   "category": "ライブ",
+   "date_text": "2027年1月3日(日)",
+   "venue_text": "AsiaWorld-Expo, Hall 5",
+   "summary": "",
+   "bands": [
+    "MyGO!!!!!"
+   ],
+   "kind": "단독",
+   "stops": [
+    {
+     "date": "2027-01-03",
+     "venue": "AsiaWorld-Expo, Hall 5"
+    }
+   ],
+   "venues": [
+    "AsiaWorld-Expo, Hall 5"
+   ],
+   "venue_note": "",
+   "prices": [
+    [
+     "",
+     "HK$1788 / HK$1488 / HK$988 / HK$788"
+    ]
+   ]
+  },
+  {
+   "url": "https://bang-dream.com/events/eleganza/",
+   "title": "Morfonica LIVE「eleganza」",
+   "category": "ライブ",
+   "date_text": "2027年1月9日(土)",
+   "venue_text": "Kanadevia Hall",
+   "summary": "",
+   "bands": [
+    "Morfonica"
+   ],
+   "kind": "단독",
+   "stops": [
+    {
+     "date": "2027-01-09",
+     "venue": "Kanadevia Hall"
+    }
+   ],
+   "venues": [
+    "Kanadevia Hall"
+   ],
+   "venue_note": "",
+   "prices": [
+    [
+     "アリーナスタンディング Sエリア(特製グッズ付き)",
+     "22,000円(税込)"
+    ],
+    [
+     "アリーナスタンディング Aエリア(特製グッズ付き)",
+     "16,500円(税込)"
+    ],
+    [
+     "スタンド指定席(特製グッズ付き)",
+     "14,300円(税込)"
+    ],
+    [
+     "スタンド指定席",
+     "9,900円(税込)"
+    ]
+   ]
+  },
+  {
+   "url": "https://bang-dream.com/events/millsage_ikka-dumb-rock/",
+   "title": "millsage×一家Dumb Rock! SPECIAL LIVE",
+   "category": "ライブ",
+   "date_text": "2027年1月11日(月･祝)",
+   "venue_text": "Kanadevia Hall",
+   "summary": "",
+   "bands": [
+    "millsage",
+    "一家Dumb Rock!"
+   ],
+   "kind": "합동",
+   "stops": [
+    {
+     "date": "2027-01-11",
+     "venue": "Kanadevia Hall"
+    }
+   ],
+   "venues": [
+    "Kanadevia Hall"
+   ],
+   "venue_note": "",
+   "prices": [
+    [
+     "アリーナスタンディング (特製グッズ付き)",
+     "16,500円(税込)"
+    ],
+    [
+     "スタンド指定席(特製グッズ付き)",
+     "12,100円(税込)"
+    ],
+    [
+     "スタンド指定席",
+     "8,800円(税込)"
+    ]
+   ]
+  },
+  {
+   "url": "https://bang-dream.com/events/kimuchikura-anisama-seoul-2027/",
+   "title": "KIMCHIKURA×ANISAMA SEOUL 2027",
+   "category": "ライブ",
+   "date_text": "2027年1月23日(土)・24日(日)",
+   "venue_text": "BLUESQUARE Woori WON Banking Hall",
+   "summary": "1月23日(土)夢限大みゅーたいぷ、1月24日(日)RAISE A SUILEN出演",
+   "bands": [
+    "RAISE A SUILEN",
+    "夢限大みゅーたいぷ"
+   ],
+   "kind": "출연",
+   "stops": [
+    {
+     "date": "2027-01-23",
+     "venue": "BLUESQUARE Woori WON Banking Hall"
+    },
+    {
+     "date": "2027-01-24",
+     "venue": "BLUESQUARE Woori WON Banking Hall"
+    }
+   ],
+   "venues": [
+    "BLUESQUARE Woori WON Banking Hall"
+   ],
+   "venue_note": "",
+   "prices": []
+  },
+  {
+   "url": "https://bang-dream.com/events/roselia-10th-anniversary-live-tour/",
+   "title": "Roselia 10th Anniversary LIVE TOUR「Rosen-Dekade: Zueignung」",
+   "category": "ライブ",
+   "date_text": "2027年1月30日(土)・2月28日(日)・3月14日(日)・4月25日(日)",
+   "venue_text": "TOYOTA ARENA TOKYO・愛知県芸術劇場 大ホール・仙台サンプラザホール・福岡サンパレス",
+   "summary": "",
+   "bands": [
+    "Roselia"
+   ],
+   "kind": "투어",
+   "stops": [
+    {
+     "date": "2027-01-30",
+     "venue": "TOYOTA ARENA TOKYO"
+    },
+    {
+     "date": "2027-02-28",
+     "venue": "愛知県芸術劇場 大ホール"
+    },
+    {
+     "date": "2027-03-14",
+     "venue": "仙台サンプラザホール"
+    },
+    {
+     "date": "2027-04-25",
+     "venue": "福岡サンパレス"
+    }
+   ],
+   "venues": [
+    "TOYOTA ARENA TOKYO",
+    "愛知県芸術劇場 大ホール",
+    "仙台サンプラザホール",
+    "福岡サンパレス"
+   ],
+   "venue_note": "",
+   "prices": [
+    [
+     "S席(特製グッズ付き)",
+     "24,200円(税込)"
+    ],
+    [
+     "A席(特製グッズ付き)",
+     "17,600円(税込)"
+    ],
+    [
+     "テラススイート席(特製グッズ付き)",
+     "17,600円(税込) ※東京公演のみ"
+    ],
+    [
+     "一般指定席(特製グッズ付き)",
+     "14,300円(税込)"
+    ],
+    [
+     "一般指定席",
+     "9,900円(税込)"
+    ]
+   ]
+  },
+  {
+   "url": "https://bang-dream.com/events/ymmt-tour2027/",
+   "title": "夢限大みゅーたいぷ LIVE TOUR 2027「YMMTric COUNTER POINT」",
+   "category": "ライブ",
+   "date_text": "2027年1月31日(日)・2月7日(日)・2月20日(土)・3月4日(木)・3月5日(金)・3月25日(木)・3月26日(金)",
+   "venue_text": "Zepp Fukuoka・仙台PIT・Zepp Sapporo・Zepp Osaka Bayside・Zepp DiverCity (TOKYO)・Zepp Nagoya",
+   "summary": "",
+   "bands": [
+    "夢限大みゅーたいぷ"
+   ],
+   "kind": "투어",
+   "stops": [
+    {
+     "date": "2027-01-31",
+     "venue": ""
+    },
+    {
+     "date": "2027-02-07",
+     "venue": ""
+    },
+    {
+     "date": "2027-02-20",
+     "venue": ""
+    },
+    {
+     "date": "2027-03-04",
+     "venue": ""
+    },
+    {
+     "date": "2027-03-05",
+     "venue": ""
+    },
+    {
+     "date": "2027-03-25",
+     "venue": ""
+    },
+    {
+     "date": "2027-03-26",
+     "venue": ""
+    }
+   ],
+   "venues": [
+    "Zepp Fukuoka",
+    "仙台PIT",
+    "Zepp Sapporo",
+    "Zepp Osaka Bayside",
+    "Zepp DiverCity (TOKYO)",
+    "Zepp Nagoya"
+   ],
+   "venue_note": "Zepp Fukuoka・仙台PIT・Zepp Sapporo・Zepp Osaka Bayside・Zepp DiverCity (TOKYO)・Zepp Nagoya",
+   "prices": []
+  },
+  {
+   "url": "https://bang-dream.com/events/29304/",
+   "title": "LISANI！TOKYO 2027",
+   "category": "ライブ",
+   "date_text": "2027年2月20日(土)・21日(日)",
+   "venue_text": "TOYOTA ARENA TOKYO",
+   "summary": "2月20日(土) millsage・一家Dumb Rock!、21日(日) Poppin'Party出演",
+   "bands": [
+    "Poppin'Party",
+    "millsage",
+    "一家Dumb Rock!"
+   ],
+   "kind": "출연",
+   "stops": [
+    {
+     "date": "2027-02-20",
+     "venue": "TOYOTA ARENA TOKYO"
+    },
+    {
+     "date": "2027-02-21",
+     "venue": "TOYOTA ARENA TOKYO"
+    }
+   ],
+   "venues": [
+    "TOYOTA ARENA TOKYO"
+   ],
+   "venue_note": "",
+   "prices": []
+  },
+  {
+   "url": "https://bang-dream.com/events/avemujica_anima-incorrupta/",
+   "title": "Ave Mujica 4th single リリース記念ライブ「Anima Incorrupta」",
+   "category": "ライブ",
+   "date_text": "2027年2月27日(土)",
+   "venue_text": "duo MUSIC EXCHANGE",
+   "summary": "",
+   "bands": [
+    "Ave Mujica"
+   ],
+   "kind": "단독",
+   "stops": [
+    {
+     "date": "2027-02-27",
+     "venue": "duo MUSIC EXCHANGE"
+    }
+   ],
+   "venues": [
+    "duo MUSIC EXCHANGE"
+   ],
+   "venue_note": "",
+   "prices": [
+    [
+     "一般エリア（スタンディング）",
+     "11,000円(税込)"
+    ]
+   ]
+  },
+  {
+   "url": "https://bang-dream.com/events/anisama-fukuoka-2027/",
+   "title": "ANISAMA FUKUOKA 2027",
+   "category": "ライブ",
+   "date_text": "2027年3月13日(土)・14日(日)",
+   "venue_text": "みずほPayPayドーム福岡",
+   "summary": "3月13日(土) MyGO!!!!!、14日(日) Ave Mujica出演",
+   "bands": [
+    "MyGO!!!!!",
+    "Ave Mujica"
+   ],
+   "kind": "출연",
+   "stops": [
+    {
+     "date": "2027-03-13",
+     "venue": "みずほPayPayドーム福岡"
+    },
+    {
+     "date": "2027-03-14",
+     "venue": "みずほPayPayドーム福岡"
+    }
+   ],
+   "venues": [
+    "みずほPayPayドーム福岡"
+   ],
+   "venue_note": "",
+   "prices": []
+  },
+  {
+   "url": "https://bang-dream.com/events/miyako_atelier/",
+   "title": "みやこのアトリエ",
+   "category": "イベント",
+   "date_text": "2027年3月20日(土)",
+   "venue_text": "学校法人片柳学園 日本工学院専門学校 片柳記念ホール",
+   "summary": "",
+   "bands": [
+    "夢限大みゅーたいぷ"
+   ],
+   "kind": "이벤트",
+   "stops": [
+    {
+     "date": "2027-03-20",
+     "venue": "学校法人片柳学園 日本工学院専門学校 片柳記念ホール"
+    }
+   ],
+   "venues": [
+    "学校法人片柳学園 日本工学院専門学校 片柳記念ホール"
+   ],
+   "venue_note": "",
+   "prices": []
+  },
+  {
+   "url": "https://bang-dream.com/events/ras-tour2027/",
+   "title": "RAISE A SUILEN LIVE TOUR 2027",
+   "category": "ライブ",
+   "date_text": "2027年4月4日(日)・4月10日(土)・4月16日(金)・4月18日(日)・5月23日(日)",
+   "venue_text": "仙台PIT・Zepp Sapporo・Zepp Haneda (TOKYO)・Zepp Osaka Bayside・名古屋 COMTEC PORTBASE",
+   "summary": "",
+   "bands": [
+    "RAISE A SUILEN"
+   ],
+   "kind": "투어",
+   "stops": [
+    {
+     "date": "2027-04-04",
+     "venue": "仙台PIT"
+    },
+    {
+     "date": "2027-04-10",
+     "venue": "Zepp Sapporo"
+    },
+    {
+     "date": "2027-04-16",
+     "venue": "Zepp Haneda (TOKYO)"
+    },
+    {
+     "date": "2027-04-18",
+     "venue": "Zepp Osaka Bayside"
+    },
+    {
+     "date": "2027-05-23",
+     "venue": "名古屋 COMTEC PORTBASE"
+    }
+   ],
+   "venues": [
+    "仙台PIT",
+    "Zepp Sapporo",
+    "Zepp Haneda (TOKYO)",
+    "Zepp Osaka Bayside",
+    "名古屋 COMTEC PORTBASE"
+   ],
+   "venue_note": "",
+   "prices": [
+    [
+     "1Fスタンディング Sエリア(前方エリア・特製グッズ付き)",
+     "22,000円(税込)"
+    ],
+    [
+     "1Fスタンディング 一般エリア(特製グッズ付き)",
+     "14,300円(税込)"
+    ],
+    [
+     "1Fスタンディング 一般エリア",
+     "9,900円(税込)"
+    ],
+    [
+     "2F指定席(特製グッズ付き)",
+     "15,400円(税込) ※宮城公演を除く"
+    ],
+    [
+     "2F指定席",
+     "11,000円(税込) ※宮城公演を除く"
+    ]
+   ]
+  },
+  {
+   "url": "https://bang-dream.com/events/mygo_10th/",
+   "title": "MyGO!!!!! 10th LIVE「僕たちのいまを越えて」",
+   "category": "ライブ",
+   "date_text": "2027年4月29日(木･祝)・30日(金)",
+   "venue_text": "Kアリーナ横浜",
+   "summary": "",
+   "bands": [
+    "MyGO!!!!!"
+   ],
+   "kind": "단독",
+   "stops": [
+    {
+     "date": "2027-04-29",
+     "venue": "Kアリーナ横浜"
+    },
+    {
+     "date": "2027-04-30",
+     "venue": "Kアリーナ横浜"
+    }
+   ],
+   "venues": [
+    "Kアリーナ横浜"
+   ],
+   "venue_note": "",
+   "prices": [
+    [
+     "S席(特製グッズ付き)",
+     "27,500円(税込)"
+    ],
+    [
+     "A席(特製グッズ付き)",
+     "16,500円(税込)"
+    ],
+    [
+     "一般指定席",
+     "9,900円(税込)"
+    ],
+    [
+     "2DAYS通しチケット",
+     "12,100円(税込)"
+    ]
+   ]
+  },
+  {
+   "url": "https://bang-dream.com/events/ikka-dumb-rock_2nd/",
+   "title": "一家Dumb Rock! 単独ライブ",
+   "category": "ライブ",
+   "date_text": "2027年5月8日(土)・9日(日)",
+   "venue_text": "EX THEATER ROPPONGI",
+   "summary": "",
+   "bands": [
+    "一家Dumb Rock!"
+   ],
+   "kind": "단독",
+   "stops": [
+    {
+     "date": "2027-05-08",
+     "venue": "EX THEATER ROPPONGI"
+    },
+    {
+     "date": "2027-05-09",
+     "venue": "EX THEATER ROPPONGI"
+    }
+   ],
+   "venues": [
+    "EX THEATER ROPPONGI"
+   ],
+   "venue_note": "",
+   "prices": []
+  },
+  {
+   "url": "https://bang-dream.com/events/millsage_2nd/",
+   "title": "millsage LIVE 002",
+   "category": "ライブ",
+   "date_text": "2027年5月13日(木)・14日(金)",
+   "venue_text": "東京ガーデンシアター",
+   "summary": "",
+   "bands": [
+    "millsage"
+   ],
+   "kind": "단독",
+   "stops": [
+    {
+     "date": "2027-05-13",
+     "venue": "東京ガーデンシアター"
+    },
+    {
+     "date": "2027-05-14",
+     "venue": "東京ガーデンシアター"
+    }
+   ],
+   "venues": [
+    "東京ガーデンシアター"
+   ],
+   "venue_note": "",
+   "prices": []
+  },
+  {
+   "url": "https://bang-dream.com/events/avemujica-8th/",
+   "title": "Ave Mujica 8th LIVE「Discrimen Fati」",
+   "category": "ライブ",
+   "date_text": "2027年5月29日(土)・30日(日)",
+   "venue_text": "Kアリーナ横浜",
+   "summary": "",
+   "bands": [
+    "Ave Mujica"
+   ],
+   "kind": "단독",
+   "stops": [
+    {
+     "date": "2027-05-29",
+     "venue": "Kアリーナ横浜"
+    },
+    {
+     "date": "2027-05-30",
+     "venue": "Kアリーナ横浜"
+    }
+   ],
+   "venues": [
+    "Kアリーナ横浜"
+   ],
+   "venue_note": "",
+   "prices": [
+    [
+     "S席(特製グッズ付き)",
+     "27,500円(税込)"
+    ],
+    [
+     "A席(特製グッズ付き)",
+     "16,500円(税込)"
+    ],
+    [
+     "一般指定席",
+     "9,900円(税込)"
+    ],
+    [
+     "2DAYS通しチケット",
+     "12,100円(税込)"
+    ]
+   ]
+  }
+ ],
+ "updated": "2026-11-23 00:50 JST"
+}
