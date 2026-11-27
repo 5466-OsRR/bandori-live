@@ -656,6 +656,34 @@
    "sales": []
   },
   {
+   "url": "https://bang-dream.com/events/megavegas2027/",
+   "title": "MEGA VEGAS 2027",
+   "category": "ライブ",
+   "date_text": "2027年3月20日(土)・21日(日)",
+   "venue_text": "ワールド記念ホール（神戸ポートアイランドホール）",
+   "summary": "3月21日(日) RAISE A SUILEN出演",
+   "bands": [
+    "RAISE A SUILEN"
+   ],
+   "kind": "출연",
+   "stops": [
+    {
+     "date": "2027-03-20",
+     "venue": "ワールド記念ホール（神戸ポートアイランドホール）"
+    },
+    {
+     "date": "2027-03-21",
+     "venue": "ワールド記念ホール（神戸ポートアイランドホール）"
+    }
+   ],
+   "venues": [
+    "ワールド記念ホール（神戸ポートアイランドホール）"
+   ],
+   "venue_note": "",
+   "prices": [],
+   "sales": []
+  },
+  {
    "url": "https://bang-dream.com/events/miyako_atelier/",
    "title": "みやこのアトリエ",
    "category": "イベント",
@@ -915,5 +943,5 @@
    ]
   }
  ],
- "updated": "2026-11-27 07:14 JST"
+ "updated": "2026-11-28 07:13 JST"
 }
